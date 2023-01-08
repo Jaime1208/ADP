@@ -1,0 +1,57 @@
+{% extends "STFbase.html" %}
+{% block title %}ANIPACTED - Login{% endblock %}
+
+{% block content %}
+<html>
+  <head>
+    <title>login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+      .container1{
+      background-color:#EEEEEE;
+      height:300px;
+      width: 700px;
+      margin:auto;
+      text-align:center;
+      }
+      button{
+      background-color:#4361B5;
+      color:#D6FFF6;
+      width:400px;
+      </style>
+  </head>
+  <body>
+    <div class="container1" >
+      <h1>Login</h1>
+      <br>
+      <form action="" method="post">
+          <label>Username: <input type="text" name="username" value="{{request.form.username }}" style="width:250px;" required></label>
+          <br>
+          <br>
+          <label>Password*: <input type="password" name="password" value="{{request.form.password }}" id="myInput" style="width:250px;" required></label>
+          <p>*New Staffs login with the default pw sent in the email</p>
+          <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+          <label><input type="checkbox" onclick="myFunction()" style="margin-left:100px;">Show Password</label>
+          <br>
+          <button type="submit">Login</button>
+          <br>
+          <br>
+          <div>
+              <a href="/STF-ForgetPW.html" style="margin-right:100px; color:#000000; text-decoration-line:underline;">Forget password</a>
+              <a href="/STF-PhoneLogin.html" style=" color:#000000; text-decoration-line:underline;">Login with phone number</a>
+          </div>
+        </div>
+       </form>
+    <script>
+    function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+        } else {
+        x.type = "password";
+        }
+    }
+</script>
+  </body>
+</html>
+{% endblock %}
